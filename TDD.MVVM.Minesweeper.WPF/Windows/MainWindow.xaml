@@ -25,14 +25,15 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding Path=Content}" BorderBrush="#B4BF95" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                    <Label Content="{Binding Path=Content}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0">
                         <Label.InputBindings>
                             <MouseBinding MouseAction="LeftClick" Command="{Binding Path=DataContext.OpenCommand ,RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"/>
                             <MouseBinding MouseAction="RightClick" Command="{Binding Path=DataContext.FlagCommand,RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding}"/>
                         </Label.InputBindings>
                         <Label.Style>
                             <Style TargetType="Label">
-                                <Setter Property="BorderThickness" Value="0.1"/>
+                                <Setter Property="BorderBrush" Value="#A7AFAF"/>
+                                <Setter Property="BorderThickness" Value=".5"/>
                                 <Setter Property="Background" Value="#C7CD85"/>
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding Path=State}" Value="OPEN">
